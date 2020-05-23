@@ -1,0 +1,8 @@
+# MODULES
+node_modules
+package-lock.json
+yarn.lock
+
+# FILES
+.env
+.DS_Store

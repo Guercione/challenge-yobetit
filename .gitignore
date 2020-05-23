@@ -1,0 +1,12 @@
+# MODULES
+node_modules
+package-lock.json
+yarn.lock
+
+# BUILD
+build
+frontend/
+
+# FILES
+.env
+.DS_Store

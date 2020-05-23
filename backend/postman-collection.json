@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "71ae9693-9e01-4e43-8196-98824c4dd9d7",
+		"name": "Yobetit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rest Countries",
+			"item": [
+				{
+					"name": "Countries by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restcountries.eu/rest/v2/name/br",
+							"protocol": "https",
+							"host": [
+								"restcountries",
+								"eu"
+							],
+							"path": [
+								"rest",
+								"v2",
+								"name",
+								"br"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restcountries.eu/rest/v2/all",
+							"protocol": "https",
+							"host": [
+								"restcountries",
+								"eu"
+							],
+							"path": [
+								"rest",
+								"v2",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Challenge",
+			"item": [
+				{
+					"name": "All countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/countries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unique country by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/countries?names=braz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"countries"
+							],
+							"query": [
+								{
+									"key": "names",
+									"value": "braz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Countries by list names",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/countries?names=braz,malt,pol",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"countries"
+							],
+							"query": [
+								{
+									"key": "names",
+									"value": "braz,malt,pol"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dbea46a2-4627-40fa-9cca-95f9dae165a0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e2f4791a-881a-4364-b865-5fcf7aba04eb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
