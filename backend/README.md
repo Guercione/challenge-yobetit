@@ -1,10 +1,12 @@
 # Challenge Yobetit - Backend (NodeJS + ExpressJS)
 
-## How to run
+### How to run
 
 - npm install / yarn
 - npm run start / yarn start
 - Endpoint: http://localhost:3333
+
+## API
 
 ### GET - /countries
 
@@ -30,7 +32,7 @@ Return an array `[]` with all **match** countries
 
 - https://restcountries.eu/#api-endpoints-name
 
-### Packages
+## Packages
 
 - https://www.npmjs.com/package/cors
 - https://www.npmjs.com/package/express

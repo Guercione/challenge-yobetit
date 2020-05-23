@@ -55,7 +55,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Challenge",
+			"name": "Challenge - Localhost",
 			"item": [
 				{
 					"name": "All countries",
@@ -125,6 +125,128 @@
 						}
 					},
 					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "24075adc-2a67-4107-9a4c-665ec7c43801",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "27cb3e7d-c94e-4714-895e-d5a00f1c1c69",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Challenge - Heroku",
+			"item": [
+				{
+					"name": "All countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://yobetit-backend.herokuapp.com/countries",
+							"protocol": "https",
+							"host": [
+								"yobetit-backend",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unique country by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://yobetit-backend.herokuapp.com/countries?names=braz",
+							"protocol": "https",
+							"host": [
+								"yobetit-backend",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"countries"
+							],
+							"query": [
+								{
+									"key": "names",
+									"value": "braz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Countries by list names",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://yobetit-backend.herokuapp.com/countries?names=braz,malt,pol",
+							"protocol": "https",
+							"host": [
+								"yobetit-backend",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"countries"
+							],
+							"query": [
+								{
+									"key": "names",
+									"value": "braz,malt,pol"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96c15c28-b168-4ada-84f6-25e433d3500d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "08f74063-1f77-4709-bc40-8b6bde1b9daa",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
