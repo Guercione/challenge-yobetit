@@ -33,6 +33,8 @@ const theme = createMuiTheme({
     fontFamily: "Texta",
     useNextVariants: true,
     subtitle1: {
+      fontFamily: "Texta Bold",
+      margin: "0 5px 0 0",
       fontSize: 18,
     },
     body1: {

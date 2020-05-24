@@ -15,7 +15,6 @@ import makeStyles from "@material-ui/styles/makeStyles";
 import ExitIcon from "@material-ui/icons/ExitToApp";
 
 const styles = makeStyles({
-  content: { paddingTop: 70 },
   avatar: { margin: "0 15px" },
 });
 
@@ -29,7 +28,7 @@ function NavBar() {
           <Hidden mdUp>
             <MenuMobile />
           </Hidden>
-          <Hidden mdDown>
+          <Hidden smDown>
             <Grid item xs="auto">
               <MenuList />
             </Grid>

@@ -7,6 +7,11 @@ import MUITextField from "@material-ui/core/TextField";
 import makeStyles from "@material-ui/styles/makeStyles";
 
 const styles = makeStyles({
+  input: {
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderColor: (props) => palette[props.color] || palette["primary"],
+    },
+  },
   color: {
     color: (props) => palette[props.color] || palette["primary"],
   },
@@ -30,6 +35,7 @@ const TextField = ({
       size="small"
       color={color}
       style={{ margin: "10px 0" }}
+      className={classes.input}
       InputLabelProps={{ className: classes.color }}
       inputProps={{
         className: classes.color,

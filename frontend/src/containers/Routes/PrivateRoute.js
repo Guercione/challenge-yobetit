@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import makeStyles from "@material-ui/styles/makeStyles";
 
 const styles = makeStyles({
-  content: { paddingTop: 70 },
+  content: { paddingTop: 95 },
 });
 
 const Login = React.lazy(() => import("containers/Login"));
@@ -14,7 +14,7 @@ const Login = React.lazy(() => import("containers/Login"));
 const PrivateRoute = ({ path, ...rest }) => {
   const classes = styles();
 
-  if (1 === 1) {
+  if (1 === 2) {
     return (
       <React.Fragment>
         <NavBar />
