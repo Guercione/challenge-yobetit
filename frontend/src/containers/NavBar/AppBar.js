@@ -1,6 +1,6 @@
 import React from "react";
 
-import palette from "constants/palette";
+import { connect } from "react-redux";
 
 import MenuList from "./MenuList";
 import MenuMobile from "./MenuMobile";
@@ -18,7 +18,7 @@ const styles = makeStyles({
   avatar: { margin: "0 15px" },
 });
 
-function NavBar() {
+function NavBar({ userName }) {
   const classes = styles();
 
   return (
@@ -35,7 +35,7 @@ function NavBar() {
           </Hidden>
           <Grid item xs="auto">
             <Grid container alignItems="center">
-              <Typography>Hello, {"Guilherme"}</Typography>
+              <Typography>Hello, {userName}</Typography>
               <Avatar
                 alt="Avatar Image"
                 src="images/avatar.png"
@@ -54,4 +54,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default connect(({ user }) => ({ userName: user.userName }))(NavBar);

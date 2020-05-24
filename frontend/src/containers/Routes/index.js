@@ -5,7 +5,6 @@ import PrivateRoute from "./PrivateRoute";
 import NavBar from "containers/NavBar";
 import ErrorBoundary from "containers/Errors/errorBoundary";
 import Loading from "components/Loading";
-import SnackBar from "components/SnackBar";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 
@@ -28,7 +27,6 @@ const Error404 = React.lazy(() => import("containers/Errors/error404"));
 const Routes = () => (
   <Router>
     <React.Suspense fallback={<ComponentLoading />}>
-      <SnackBar />
       <Container maxWidth="md">
         <ErrorBoundary>
           <Switch>

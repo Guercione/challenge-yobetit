@@ -1,12 +1,13 @@
 import { takeLatest, all } from "redux-saga/effects";
 
-import types from "redux/types/eventType";
-// import {} from "./eventSaga";
+import types from "redux/types/countriesType";
+import { userGetUniqueCountrySaga } from "./countriesSaga";
 
 export default function* rootSaga() {
   yield all([
-    // takeLatest(types.EVENT_POST_REQUEST, eventPostRequestSaga),
-    // takeLatest(types.EVENT_GET_BY_HASH_REQUEST, eventGetByHashRequestSaga),
-    // takeLatest(types.EVENT_DELETE_REQUEST, deleteEventByHashSaga),
+    takeLatest(
+      types.COUNTRIES_GET_UNIQUE_COUNTRY_SAGA,
+      userGetUniqueCountrySaga
+    ),
   ]);
 }

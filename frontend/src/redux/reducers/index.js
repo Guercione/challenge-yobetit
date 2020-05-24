@@ -1,5 +1,7 @@
-import notification from "./notificationReducer";
+import user from "./userReducer";
+import countries from "./countriesReducer";
 
 export default {
-  notification,
+  user,
+  countries,
 };

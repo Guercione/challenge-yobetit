@@ -9,7 +9,8 @@ const TextFieldAutocomplete = ({
   label,
   loading,
   options,
-  onChange,
+  onInputSelectChange,
+  onInputTextChange,
   optionKey,
   optionImageKey,
   "data-testid": dataTestid,
@@ -36,7 +37,7 @@ const TextFieldAutocomplete = ({
       style={{ width: "100%" }}
       options={options}
       loading={loading}
-      onChange={onChange}
+      onChange={onInputSelectChange}
       getOptionLabel={(option) => option[optionKey]}
       renderOption={renderTextFieldContent}
       noOptionsText="No item found"
@@ -51,6 +52,7 @@ const TextFieldAutocomplete = ({
             ...params.inputProps,
           }}
           {...rest}
+          onChange={onInputTextChange}
         />
       )}
     />

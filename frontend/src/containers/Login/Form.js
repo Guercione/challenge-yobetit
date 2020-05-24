@@ -1,5 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+
+import { connect } from "react-redux";
+import { userLoginAction } from "redux/actions/userAction";
+import { userGetUniqueCountryAction } from "redux/actions/countriesAction";
+
 import palette from "constants/palette";
 
 import TextField from "components/inputs/TextField";
@@ -9,17 +14,6 @@ import Button from "components/inputs/Button";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
 import makeStyles from "@material-ui/styles/makeStyles";
-
-const options = [
-  {
-    name: "Brazil",
-    flag: "https://restcountries.eu/data/bra.svg",
-  },
-  {
-    name: "Poland",
-    flag: "https://restcountries.eu/data/pol.svg",
-  },
-];
 
 const styles = makeStyles({
   content: {
@@ -40,15 +34,33 @@ const styles = makeStyles({
   },
 });
 
-function Home() {
+function Form({
+  currentCountry,
+  loading,
+  userLoginAction,
+  userGetUniqueCountryAction,
+}) {
   const classes = styles();
   const [name, setName] = React.useState("");
   const [country, setCountry] = React.useState({});
-  const [error, setError] = React.useState(false);
+  const [inputError, setInputError] = React.useState(false);
 
   function handleLogin() {
-    if (name && country.name) return setError(false);
-    return setError(true);
+    if (name && country.name) {
+      setInputError(false);
+      userLoginAction({ userName: name, country: country });
+    } else {
+      setInputError(true);
+    }
+  }
+
+  function handleCountryInputSelect(el, item) {
+    setCountry(item || {});
+  }
+
+  function handleCountryInputText(el) {
+    const value = el.target.value;
+    if (value) userGetUniqueCountryAction(value);
   }
 
   return (
@@ -76,20 +88,22 @@ function Home() {
         <Grid item xs="auto" container justify="center">
           <TextField
             fullWidth
-            error={error}
+            error={inputError}
             name="login-name"
             label="Name"
             onChange={(el) => setName(el.target.value)}
           />
           <TextFieldAutocomplete
             fullWidth
-            error={error}
+            error={inputError}
             name="login-country"
             label="Country"
-            options={options}
+            loading={loading}
+            options={[currentCountry]}
             optionKey="name"
             optionImageKey="flag"
-            onChange={(el, item) => setCountry(item || {})}
+            onInputSelectChange={handleCountryInputSelect}
+            onInputTextChange={handleCountryInputText}
           />
         </Grid>
 
@@ -101,8 +115,23 @@ function Home() {
   );
 }
 
-Home.propTypes = {};
+Form.propTypes = {
+  loading: PropTypes.bool,
+  currentCountry: PropTypes.object.isRequired,
+  userLoginAction: PropTypes.func.isRequired,
+  userGetUniqueCountryAction: PropTypes.func.isRequired,
+};
 
-Home.defaultProps = {};
+Form.defaultProps = {
+  loading: false,
+};
 
-export default Home;
+const mapStateToProps = (store) => ({
+  currentCountry: store.countries.currentCountry,
+  loading: store.countries.loading,
+});
+
+export default connect(mapStateToProps, {
+  userLoginAction,
+  userGetUniqueCountryAction,
+})(Form);
