@@ -97,7 +97,7 @@ function ListAllCountries({
           </Typography>
         </If>
 
-        <If condition={countries && !countries.length}>
+        <If condition={!countries.length}>
           <Typography variant="body2" color="secondary">
             No countries found
           </Typography>

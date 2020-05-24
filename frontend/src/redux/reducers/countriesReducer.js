@@ -67,6 +67,13 @@ export const countries = (state = initialState, action) => {
         ),
       };
 
+    case Type.COUNTRIES_CLEAR_FAVORITE_COUNTRY:
+      removeFavoriteCountry(state.currentCountry.name);
+      return {
+        ...state,
+        favoriteCountries: [],
+      };
+
     case Type.COUNTRIES_SET_CURRENT_COUNTRY:
       return {
         ...state,

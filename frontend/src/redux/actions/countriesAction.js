@@ -13,6 +13,11 @@ export const countriesSetCurrentCountryAction = (country) => ({
   country,
 });
 
+export const countriesClearFavoriteCountriesAction = (countriesList) => ({
+  type: Type.COUNTRIES_CLEAR_FAVORITE_COUNTRY,
+  countriesList,
+});
+
 export const countriesGetUniqueCountryAction = (countryName) => ({
   type: Type.COUNTRIES_GET_UNIQUE_COUNTRY_SAGA,
   countryName,

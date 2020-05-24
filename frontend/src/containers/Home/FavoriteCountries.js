@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import {
   countriesSetCurrentCountryAction,
   countriesGetListCountriesAction,
+  countriesClearFavoriteCountriesAction,
 } from "redux/actions/countriesAction";
 
 import palette from "constants/palette";
@@ -31,6 +32,7 @@ function FavoriteCountries({
   favoriteCountries,
   countriesSetCurrentCountryAction,
   countriesGetListCountriesAction,
+  countriesClearFavoriteCountriesAction,
 }) {
   const classes = styles();
 
@@ -39,6 +41,8 @@ function FavoriteCountries({
 
     if (list && list.length) {
       countriesGetListCountriesAction(list);
+    } else {
+      countriesClearFavoriteCountriesAction();
     }
   }, []);
 
@@ -74,4 +78,5 @@ const mapStateToProps = (store) => ({
 export default connect(mapStateToProps, {
   countriesSetCurrentCountryAction,
   countriesGetListCountriesAction,
+  countriesClearFavoriteCountriesAction,
 })(FavoriteCountries);

@@ -15,13 +15,11 @@ export function getFavoriteCountry() {
 
 export function removeFavoriteCountry(countryName) {
   const countries = localStorage.getItem(key_favoriteCountries);
-  console.log(countryName, countries);
   if (countries) {
     const newList = countries
       .split(",")
       .filter((country) => country.toLowerCase() !== countryName.toLowerCase())
       .join(",");
-    console.log(newList);
     localStorage.setItem(key_favoriteCountries, newList);
   }
 }
