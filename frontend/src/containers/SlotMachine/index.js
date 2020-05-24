@@ -6,14 +6,14 @@ import makeStyles from "@material-ui/styles/makeStyles";
 
 const styles = makeStyles({});
 
-function Home() {
+function SlotMachine() {
   const classes = styles();
 
   return <Grid>SLOT MACHINE</Grid>;
 }
 
-Home.propTypes = {};
+SlotMachine.propTypes = {};
 
-Home.defaultProps = {};
+SlotMachine.defaultProps = {};
 
-export default Home;
+export default SlotMachine;

@@ -3,7 +3,7 @@ import defaultCountry from "constants/defaultCountry";
 import { setFavoriteCountry, removeFavoriteCountry } from "utils/localStorage";
 
 export const initialState = {
-  countries: [],
+  countriesList: [],
   favoriteCountries: [],
   currentCountry: defaultCountry,
   loading: false,
@@ -40,7 +40,7 @@ export const countries = (state = initialState, action) => {
     case Type.COUNTRIES_SET_ALL_COUNTRIES:
       return {
         ...state,
-        countries: action.countries || [],
+        countriesList: action.countries || [],
       };
 
     case Type.COUNTRIES_SET_FAVORITE_LIST_COUNTRIES:

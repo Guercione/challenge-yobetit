@@ -18,14 +18,20 @@ import Tooltip from "@material-ui/core/Tooltip";
 import StarIcon from "@material-ui/icons/Star";
 import makeStyles from "@material-ui/styles/makeStyles";
 
-const styles = makeStyles({
-  content: { padding: 15, width: 440, minHeight: 440 },
+const styles = makeStyles((theme) => ({
+  content: {
+    padding: 15,
+    minHeight: 440,
+    [theme.breakpoints.up("sm")]: {
+      width: 440,
+    },
+  },
   flag: {
     marginBottom: 15,
     "& img": { border: "1px solid #f1f1f1", width: 100 },
   },
   active: { color: palette["highlight"] },
-});
+}));
 
 function CountryInfo({
   isFavorite,

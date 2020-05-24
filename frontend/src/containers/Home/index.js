@@ -2,7 +2,7 @@ import React from "react";
 
 import CountryInfo from "./CountryInfo";
 import FavoriteCountries from "./FavoriteCountries";
-import ListCountries from "./ListCountries";
+import ListCountries from "./ListAllCountries";
 import Grid from "@material-ui/core/Grid";
 import makeStyles from "@material-ui/styles/makeStyles";
 

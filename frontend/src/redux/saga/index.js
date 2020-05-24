@@ -2,19 +2,24 @@ import { takeLatest, all } from "redux-saga/effects";
 
 import types from "redux/types/countriesType";
 import {
-  userGetUniqueCountrySaga,
-  userGetListCountriesSaga,
+  countriesGetUniqueCountrySaga,
+  countriesGetListCountriesSaga,
+  countriesGetAllCountriesSaga,
 } from "./countriesSaga";
 
 export default function* rootSaga() {
   yield all([
     takeLatest(
       types.COUNTRIES_GET_UNIQUE_COUNTRY_SAGA,
-      userGetUniqueCountrySaga
+      countriesGetUniqueCountrySaga
     ),
     takeLatest(
       types.COUNTRIES_GET_LIST_COUNTRIES_SAGA,
-      userGetListCountriesSaga
+      countriesGetListCountriesSaga
+    ),
+    takeLatest(
+      types.COUNTRIES_GET_ALL_COUNTRIES_SAGA,
+      countriesGetAllCountriesSaga
     ),
   ]);
 }

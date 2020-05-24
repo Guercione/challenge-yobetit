@@ -1,8 +1,8 @@
 import request from "./apiRequest";
 
-export const getCountriesApi = async () => {
+export const getAllCountriesApi = async () => {
   try {
-    const { data, status } = await request.post("/countries");
+    const { data, status } = await request.get("/countries");
 
     return { data: data, status: status };
   } catch (error) {
