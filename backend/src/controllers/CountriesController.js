@@ -23,9 +23,7 @@ async function getUniqueCountryByName({ request, response, countryName }) {
 
 async function getCountriesByNames({ request, response, countriesNames }) {
   try {
-    countriesNames = countriesNames.map((country) =>
-      country.replace(/[^a-zA-Z]/g, "").toLowerCase()
-    );
+    countriesNames = countriesNames.map((country) => country.toLowerCase());
 
     const service = await CountrieService.getAllCountries();
     const countriesMatch = service.data.filter((country) =>
