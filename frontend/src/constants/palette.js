@@ -1,9 +1,7 @@
 export default {
-  primary: "#5331d5",
+  primary: "#4b1056",
   secondary: "#ffffff",
-  highlight: "#FFBE48",
-
-  grey: "#6d787e",
+  highlight: "#dd750d",
 
   error: "#f76262",
   warning: "#FFBE48",

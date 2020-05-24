@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import palette from "constants/palette";
 
@@ -11,14 +12,23 @@ const styles = makeStyles({
   },
 });
 
-const TextField = ({ color, error, "data-testid": dataTestid, ...rest }) => {
+const TextField = ({
+  name,
+  label,
+  color,
+  error,
+  "data-testid": dataTestid,
+  ...rest
+}) => {
   const classes = styles({ color });
-
   return (
     <MUITextField
+      id={"textfield-" + (name || label)}
+      name={name || label}
+      label={label}
       variant="outlined"
       size="small"
-      color={color || "primary"}
+      color={color}
       style={{ margin: "10px 0" }}
       InputLabelProps={{ className: classes.color }}
       inputProps={{
@@ -32,8 +42,20 @@ const TextField = ({ color, error, "data-testid": dataTestid, ...rest }) => {
   );
 };
 
-TextField.propTypes = {};
+TextField.propTypes = {
+  color: PropTypes.string,
+  error: PropTypes.bool,
+  name: PropTypes.string,
+  label: PropTypes.string,
+  "data-testid": PropTypes.string,
+};
 
-TextField.defaultProps = {};
+TextField.defaultProps = {
+  name: "",
+  label: "",
+  color: "primary",
+  error: false,
+  "data-testid": "",
+};
 
 export default TextField;

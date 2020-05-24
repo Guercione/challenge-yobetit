@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import patelle from "constants/palette";
 
-// COMPOENTS
 import Loading from "components/Loading";
 import MuiButton from "@material-ui/core/Button";
 
@@ -14,10 +13,11 @@ const Button = ({ loading, disabled, children, color, onClick, ...rest }) => {
       style={{
         color:
           color === "secondary" ? patelle["primary"] : patelle["secondary"],
+        borderRadius: 25,
         backgroundColor: patelle[color],
         fontWeight: "bold",
         height: 40,
-        minWidth: 95,
+        minWidth: 100,
       }}
       onClick={disabled || loading ? () => {} : onClick}
       {...rest}

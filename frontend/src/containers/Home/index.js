@@ -6,10 +6,10 @@ import makeStyles from "@material-ui/styles/makeStyles";
 
 const styles = makeStyles({});
 
-function Home({ eventId, eventHash }) {
+function Home() {
   const classes = styles();
 
-  return <Grid></Grid>;
+  return <Grid>TESTE</Grid>;
 }
 
 Home.propTypes = {};
