@@ -6,7 +6,6 @@ import palette from "constants/palette";
 
 import Routes from "./Routes";
 
-import Container from "@material-ui/core/Grid";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 
@@ -33,9 +32,6 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: "Texta",
     useNextVariants: true,
-    h1: {
-      fontSize: 28,
-    },
     subtitle1: {
       fontSize: 18,
     },
