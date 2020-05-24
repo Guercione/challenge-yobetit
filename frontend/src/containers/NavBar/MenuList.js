@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import palette from "constants/palette";
 import links from "constants/navbar";
+import { clearLocalStorage } from "utils/localStorage";
 
 import { NavLink } from "react-router-dom";
 import Hidden from "@material-ui/core/Hidden";
@@ -35,7 +36,7 @@ function MenuList({ onClick }) {
         <NavLink
           exact
           to="/"
-          onClick={() => console.log("Logout")}
+          onClick={() => clearLocalStorage()}
           className={classes.link}
         >
           <ExitIcon />

@@ -1,7 +1,7 @@
 import React from "react";
 
 import CountryInfo from "./CountryInfo";
-import FavoritesCountries from "./FavoritesCountries";
+import FavoriteCountries from "./FavoriteCountries";
 import ListCountries from "./ListCountries";
 import Grid from "@material-ui/core/Grid";
 import makeStyles from "@material-ui/styles/makeStyles";
@@ -19,7 +19,7 @@ function Home() {
         <CountryInfo />
       </Grid>
       <Grid item xs={12} md={5} className={classes.cardSpace}>
-        <FavoritesCountries />
+        <FavoriteCountries />
       </Grid>
       <Grid item xs={12} className={classes.cardSpace}>
         <ListCountries />

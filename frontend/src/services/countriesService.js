@@ -27,7 +27,7 @@ export const getCountryByNameApi = async ({ countryName }) => {
   }
 };
 
-export const getCountriesByNamesApi = async ({ countriesNames }) => {
+export const getCountriesByNamesApi = async (countriesNames) => {
   try {
     const { data, status } = await request.get(
       `/countries?names=${countriesNames}`

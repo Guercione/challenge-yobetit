@@ -1,5 +1,7 @@
 import React from "react";
 
+import { clearLocalStorage } from "utils/localStorage";
+
 import { connect } from "react-redux";
 
 import MenuList from "./MenuList";
@@ -42,7 +44,7 @@ function NavBar({ userName }) {
                 className={classes.avatar}
               ></Avatar>
               <Hidden mdDown>
-                <IconButton>
+                <IconButton onClick={() => clearLocalStorage()}>
                   <ExitIcon color="primary" />
                 </IconButton>
               </Hidden>

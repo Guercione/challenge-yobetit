@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import { userLoginAction } from "redux/actions/userAction";
-import { userGetUniqueCountryAction } from "redux/actions/countriesAction";
+import {
+  countriesGetUniqueCountryAction,
+  countriesSetCurrentCountryAction,
+} from "redux/actions/countriesAction";
 
 import palette from "constants/palette";
 
@@ -38,29 +41,28 @@ function Form({
   currentCountry,
   loading,
   userLoginAction,
-  userGetUniqueCountryAction,
+  countriesGetUniqueCountryAction,
 }) {
   const classes = styles();
   const [name, setName] = React.useState("");
-  const [country, setCountry] = React.useState({});
   const [inputError, setInputError] = React.useState(false);
 
   function handleLogin() {
-    if (name && country.name) {
+    if (name && currentCountry.name) {
       setInputError(false);
-      userLoginAction({ userName: name, country: country });
+      userLoginAction({ userName: name, country: currentCountry });
     } else {
       setInputError(true);
     }
   }
 
   function handleCountryInputSelect(el, item) {
-    setCountry(item || {});
+    countriesSetCurrentCountryAction(item);
   }
 
   function handleCountryInputText(el) {
     const value = el.target.value;
-    if (value) userGetUniqueCountryAction(value);
+    if (value) countriesGetUniqueCountryAction(value);
   }
 
   return (
@@ -119,7 +121,7 @@ Form.propTypes = {
   loading: PropTypes.bool,
   currentCountry: PropTypes.object.isRequired,
   userLoginAction: PropTypes.func.isRequired,
-  userGetUniqueCountryAction: PropTypes.func.isRequired,
+  countriesGetUniqueCountryAction: PropTypes.func.isRequired,
 };
 
 Form.defaultProps = {
@@ -133,5 +135,5 @@ const mapStateToProps = (store) => ({
 
 export default connect(mapStateToProps, {
   userLoginAction,
-  userGetUniqueCountryAction,
+  countriesGetUniqueCountryAction,
 })(Form);

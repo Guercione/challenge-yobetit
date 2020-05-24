@@ -13,7 +13,7 @@ export const countriesSetCurrentCountryAction = (country) => ({
   country,
 });
 
-export const userGetUniqueCountryAction = (countryName) => ({
+export const countriesGetUniqueCountryAction = (countryName) => ({
   type: Type.COUNTRIES_GET_UNIQUE_COUNTRY_SAGA,
   countryName,
 });

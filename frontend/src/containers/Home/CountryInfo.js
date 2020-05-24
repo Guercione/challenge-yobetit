@@ -19,7 +19,7 @@ import StarIcon from "@material-ui/icons/Star";
 import makeStyles from "@material-ui/styles/makeStyles";
 
 const styles = makeStyles({
-  content: { padding: 15, width: 440 },
+  content: { padding: 15, width: 440, minHeight: 440 },
   flag: {
     marginBottom: 15,
     "& img": { border: "1px solid #f1f1f1", width: 100 },

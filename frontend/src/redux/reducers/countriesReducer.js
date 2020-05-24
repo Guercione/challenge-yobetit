@@ -1,5 +1,6 @@
 import Type from "redux/types/countriesType";
 import defaultCountry from "constants/defaultCountry";
+import { setFavoriteCountry, removeFavoriteCountry } from "utils/localStorage";
 
 export const initialState = {
   countries: [],
@@ -42,13 +43,23 @@ export const countries = (state = initialState, action) => {
         countries: action.countries || [],
       };
 
+    case Type.COUNTRIES_SET_FAVORITE_LIST_COUNTRIES:
+      return {
+        ...state,
+        favoriteCountries: Array.isArray(action.countries)
+          ? action.countries
+          : [action.countries],
+      };
+
     case Type.COUNTRIES_SET_FAVORITE_COUNTRY:
+      setFavoriteCountry(state.currentCountry.name);
       return {
         ...state,
         favoriteCountries: [...state.favoriteCountries, state.currentCountry],
       };
 
     case Type.COUNTRIES_REMOVE_FAVORITE_COUNTRY:
+      removeFavoriteCountry(state.currentCountry.name);
       return {
         ...state,
         favoriteCountries: state.favoriteCountries.filter(
