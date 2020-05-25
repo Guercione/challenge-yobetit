@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import {
@@ -68,6 +69,20 @@ function FavoriteCountries({
     </Grid>
   );
 }
+
+FavoriteCountries.propTypes = {
+  loading: PropTypes.bool,
+  favoriteCountries: PropTypes.array,
+  userCountry: PropTypes.object.isRequired,
+  countriesGetListCountriesAction: PropTypes.func.isRequired,
+  countriesSetCurrentCountryAction: PropTypes.func.isRequired,
+  countriesClearFavoriteCountriesAction: PropTypes.func.isRequired,
+};
+
+FavoriteCountries.defaultProps = {
+  loading: false,
+  favoriteCountries: [],
+};
 
 const mapStateToProps = (store) => ({
   userCountry: store.user.userCountry,

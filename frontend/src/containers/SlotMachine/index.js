@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import Machine from "./Machine";
 import Rules from "./Rules";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import makeStyles from "@material-ui/styles/makeStyles";
 
 const styles = makeStyles((theme) => ({
@@ -34,6 +33,15 @@ function SlotMachine({ coins }) {
     </Grid>
   );
 }
+
+SlotMachine.propTypes = {
+  coins: PropTypes.number,
+};
+
+SlotMachine.defaultProps = {
+  coins: 0,
+};
+
 const mapStateToProps = (store) => ({
   coins: store.user.coins,
 });

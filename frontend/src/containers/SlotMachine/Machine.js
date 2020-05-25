@@ -60,8 +60,6 @@ function Machine({ coins, userAddCoin, userRemoveCoin }) {
         setMessage(`Sorry, but you haven't won. Try again!`);
       }
     }, 1000);
-
-    console.log(result);
   }
 
   return (

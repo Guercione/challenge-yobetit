@@ -38,8 +38,8 @@ const styles = makeStyles({
 });
 
 function Form({
-  currentCountry,
   loading,
+  currentCountry,
   userLoginAction,
   countriesGetUniqueCountryAction,
 }) {

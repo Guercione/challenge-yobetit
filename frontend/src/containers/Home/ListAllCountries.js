@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import {
@@ -120,7 +121,19 @@ function ListAllCountries({
   );
 }
 
+ListAllCountries.propTypes = {
+  loading: PropTypes.bool,
+  countries: PropTypes.array.isRequired,
+  countriesGetAllCountriesAction: PropTypes.func.isRequired,
+  countriesSetCurrentCountryAction: PropTypes.func.isRequired,
+};
+
+ListAllCountries.defaultProps = {
+  loading: false,
+};
+
 const mapStateToProps = (store) => ({
+  loading: store.countries.loading,
   countries: store.countries.countriesList,
 });
 

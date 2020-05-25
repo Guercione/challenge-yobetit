@@ -1,7 +1,6 @@
 import React from "react";
 
 import MenuList from "./MenuList";
-
 import Drawer from "@material-ui/core/Drawer";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";

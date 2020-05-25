@@ -32,11 +32,13 @@ const PrivateRoute = ({ userName, userCountry, path, ...rest }) => {
 };
 
 PrivateRoute.propTypes = {
+  path: PropTypes.string,
   userName: PropTypes.string,
   userCountry: PropTypes.object,
 };
 
 PrivateRoute.defaultProps = {
+  path: "/",
   userName: "",
   userCountry: {},
 };

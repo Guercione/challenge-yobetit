@@ -1,21 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import palette from "constants/palette";
+
 import { connect } from "react-redux";
 import {
   countriesRemoveFavoriteCountryAction,
   countriesSetFavoriteCountryAction,
 } from "redux/actions/countriesAction";
 
-import palette from "constants/palette";
-
 import If from "components/If";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import StarIcon from "@material-ui/icons/Star";
+import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import Tooltip from "@material-ui/core/Tooltip";
-import StarIcon from "@material-ui/icons/Star";
 import makeStyles from "@material-ui/styles/makeStyles";
 
 const styles = makeStyles((theme) => ({
@@ -132,6 +132,17 @@ function CountryInfo({
     </Paper>
   );
 }
+
+CountryInfo.propTypes = {
+  currentCountry: PropTypes.object.isRequired,
+  isFavorite: PropTypes.bool.isRequired,
+  userCountry: PropTypes.object.isRequired,
+  countriesSetFavoriteCountryAction: PropTypes.func.isRequired,
+  countriesRemoveFavoriteCountryAction: PropTypes.func.isRequired,
+};
+
+CountryInfo.defaultProps = {};
+
 const mapStateToProps = (store) => ({
   currentCountry: store.countries.currentCountry,
   isFavorite: store.countries.favoriteCountries.some(

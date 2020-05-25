@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import If from "components/If";
 import Grid from "@material-ui/core/Grid";
@@ -49,5 +50,15 @@ function ListCountries({ countries, onClick }) {
     </If>
   );
 }
+
+ListCountries.propTypes = {
+  countries: PropTypes.array,
+  onClick: PropTypes.func,
+};
+
+ListCountries.defaultProps = {
+  countries: [],
+  onClick: () => {},
+};
 
 export default ListCountries;

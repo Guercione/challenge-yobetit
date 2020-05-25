@@ -1,8 +1,8 @@
 import React from "react";
-
-import { clearLocalStorage } from "utils/localStorage";
+import PropTypes from "prop-types";
 
 import palette from "constants/palette";
+import { clearLocalStorage } from "utils/localStorage";
 
 import { connect } from "react-redux";
 
@@ -26,7 +26,7 @@ const styles = makeStyles({
 
 function NavBar({ userName, coins }) {
   const classes = styles();
-  console.log(coins);
+
   return (
     <AppBar position="absolute" color="secondary">
       <Toolbar>
@@ -65,6 +65,16 @@ function NavBar({ userName, coins }) {
     </AppBar>
   );
 }
+
+NavBar.propTypes = {
+  userName: PropTypes.string,
+  coins: PropTypes.number,
+};
+
+NavBar.defaultProps = {
+  userName: "",
+  coins: 0,
+};
 
 const mapStateToProps = ({ user }) => ({
   userName: user.userName,
