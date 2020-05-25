@@ -28,8 +28,7 @@ const styles = makeStyles({
     borderRadius: 10,
     width: "100%",
     maxWidth: 300,
-    height: "100%",
-    maxHeight: 350,
+    height: 350,
   },
   avatar: {
     height: 85,
