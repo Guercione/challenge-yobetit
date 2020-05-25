@@ -1,5 +1,4 @@
 import { reels, prizes } from "constants/reel";
-//Math.floor(Math.random() * Math.floor(10))
 
 export default function spin() {
   const reelsResult = randomReels();
