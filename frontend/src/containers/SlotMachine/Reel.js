@@ -7,15 +7,15 @@ import makeStyles from "@material-ui/styles/makeStyles";
 
 const styles = makeStyles({
   card: {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     margin: "10px 0",
     "& img": {
-      height: 70,
-      width: 70,
+      height: 65,
+      width: 65,
     },
   },
 });

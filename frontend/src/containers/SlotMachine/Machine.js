@@ -23,6 +23,9 @@ const styles = makeStyles({
     minHeight: 230,
     padding: 15,
   },
+  reels: {
+    width: 300,
+  },
 });
 
 function Machine({ coins, userAddCoin, userRemoveCoin }) {
@@ -75,7 +78,7 @@ function Machine({ coins, userAddCoin, userRemoveCoin }) {
               : "Click in SPIN to play")}
         </Typography>
 
-        <Grid container justify="space-around">
+        <Grid container justify="space-around" className={classes.reels}>
           <Reel spinning={spinning1} fruit={reels[0]} />
           <Reel spinning={spinning2} fruit={reels[1]} />
           <Reel spinning={spinning3} fruit={reels[2]} />

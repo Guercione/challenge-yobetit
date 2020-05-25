@@ -23,7 +23,12 @@ function Machine() {
 
   return (
     <Paper className={classes.content}>
-      <Grid container direction="column" alignContent="center">
+      <Grid
+        container
+        direction="column"
+        alignItems="center"
+        alignContent="center"
+      >
         <Typography align="center" variant="h6">
           PRIZES
         </Typography>
