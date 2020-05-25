@@ -2,6 +2,8 @@ import React from "react";
 
 import { clearLocalStorage } from "utils/localStorage";
 
+import palette from "constants/palette";
+
 import { connect } from "react-redux";
 
 import MenuList from "./MenuList";
@@ -15,14 +17,16 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import makeStyles from "@material-ui/styles/makeStyles";
 import ExitIcon from "@material-ui/icons/ExitToApp";
+import CashIcon from "@material-ui/icons/MonetizationOn";
 
 const styles = makeStyles({
   avatar: { margin: "0 15px" },
+  coin: { color: palette["highlight"] },
 });
 
-function NavBar({ userName }) {
+function NavBar({ userName, coins }) {
   const classes = styles();
-
+  console.log(coins);
   return (
     <AppBar position="absolute" color="secondary">
       <Toolbar>
@@ -35,6 +39,12 @@ function NavBar({ userName }) {
               <MenuList />
             </Grid>
           </Hidden>
+          <Grid item xs="auto" className={classes.coin}>
+            <Grid container alignItems="center">
+              <CashIcon />
+              <Typography variant="subtitle1">{coins}</Typography>
+            </Grid>
+          </Grid>
           <Grid item xs="auto">
             <Grid container alignItems="center">
               <Typography>Hello, {userName}</Typography>
@@ -56,4 +66,9 @@ function NavBar({ userName }) {
   );
 }
 
-export default connect(({ user }) => ({ userName: user.userName }))(NavBar);
+const mapStateToProps = ({ user }) => ({
+  userName: user.userName,
+  coins: user.coins,
+});
+
+export default connect(mapStateToProps)(NavBar);
