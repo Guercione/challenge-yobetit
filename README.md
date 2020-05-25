@@ -71,7 +71,7 @@ https://material-ui.com
 - npm install / yarn
 - npm run start / yarn start
 - Endpoint: http://localhost:3333
-- Edit `REACT_APP_API_URL` on `.env` with the API URI
+- **Edit `REACT_APP_API_URL` on `frontend/.env` with the API URI**
 
 ## Packages
 
