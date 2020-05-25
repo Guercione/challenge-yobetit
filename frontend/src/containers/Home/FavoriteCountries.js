@@ -45,7 +45,7 @@ function FavoriteCountries({
     } else {
       countriesClearFavoriteCountriesAction();
     }
-  }, []);
+  }, [countriesClearFavoriteCountriesAction, countriesGetListCountriesAction]);
 
   return (
     <Grid container direction="column">

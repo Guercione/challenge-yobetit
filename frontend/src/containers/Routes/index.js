@@ -2,9 +2,8 @@ import React from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 import PrivateRoute from "./PrivateRoute";
-import NavBar from "containers/NavBar";
-import ErrorBoundary from "containers/Errors/errorBoundary";
 import Loading from "components/Loading";
+import ErrorBoundary from "containers/Errors/errorBoundary";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 

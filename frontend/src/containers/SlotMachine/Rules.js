@@ -27,6 +27,9 @@ function Machine() {
         <Typography align="center" variant="h6">
           PRIZES
         </Typography>
+        <Typography align="center" variant="subtitle1">
+          1 SPIN = 1 COIN
+        </Typography>
         {prizes.map((prize) => (
           <Grid
             key={prize.fruit + prize.value}

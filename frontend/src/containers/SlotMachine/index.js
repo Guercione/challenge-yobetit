@@ -1,27 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
-
-import { connect } from "react-redux";
 
 import Machine from "./Machine";
 import Rules from "./Rules";
 import Grid from "@material-ui/core/Grid";
-import makeStyles from "@material-ui/styles/makeStyles";
 
-const styles = makeStyles((theme) => ({
-  content: {
-    width: "100%",
-    padding: 15,
-  },
-  card: {
-    width: 100,
-    height: 100,
-  },
-}));
-
-function SlotMachine({ coins }) {
-  const classes = styles();
-
+function SlotMachine() {
   return (
     <Grid container justify="space-between">
       <Grid item xs={12} md={6}>
@@ -34,16 +17,4 @@ function SlotMachine({ coins }) {
   );
 }
 
-SlotMachine.propTypes = {
-  coins: PropTypes.number,
-};
-
-SlotMachine.defaultProps = {
-  coins: 0,
-};
-
-const mapStateToProps = (store) => ({
-  coins: store.user.coins,
-});
-
-export default connect(mapStateToProps, {})(SlotMachine);
+export default SlotMachine;

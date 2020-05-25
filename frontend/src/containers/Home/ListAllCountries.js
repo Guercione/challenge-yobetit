@@ -42,7 +42,7 @@ function ListAllCountries({
 
   React.useEffect(() => {
     countriesGetAllCountriesAction();
-  }, []);
+  }, [countriesGetAllCountriesAction]);
 
   function handleSearch(e) {
     const { value } = e.target;

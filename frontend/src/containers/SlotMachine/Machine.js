@@ -117,6 +117,17 @@ function Machine({ coins, userAddCoin, userRemoveCoin }) {
     </Paper>
   );
 }
+
+Machine.propTypes = {
+  coins: PropTypes.number,
+  userAddCoin: PropTypes.func.isRequired,
+  userRemoveCoin: PropTypes.func.isRequired,
+};
+
+Machine.defaultProps = {
+  coins: 0,
+};
+
 const mapStateToProps = (store) => ({
   coins: store.user.coins,
 });

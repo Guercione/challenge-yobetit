@@ -46,7 +46,7 @@ const theme = createMuiTheme({
   },
 });
 
-const ComponentLoading = () => (
+const ComponentLoading = (
   <Grid
     container
     direction="row"
