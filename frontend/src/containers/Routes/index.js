@@ -3,7 +3,7 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 import PrivateRoute from "./PrivateRoute";
 import Loading from "components/Loading";
-import ErrorBoundary from "containers/Errors/ErrorBoundary";
+import ErrorBoundary from "containers/Errors/errorBoundary";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 
@@ -21,7 +21,7 @@ const ComponentLoading = () => (
 
 const Home = React.lazy(() => import("containers/Home"));
 const SlotMachine = React.lazy(() => import("containers/SlotMachine"));
-const Error404 = React.lazy(() => import("containers/Errors/Error404"));
+const Error404 = React.lazy(() => import("containers/Errors/error404"));
 
 const Routes = () => (
   <Router>

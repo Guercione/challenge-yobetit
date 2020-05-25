@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import If from "components/If";
-import Loading from "components/Loading";
 import Paper from "@material-ui/core/Paper";
 import makeStyles from "@material-ui/styles/makeStyles";
 
