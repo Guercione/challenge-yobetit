@@ -6,9 +6,9 @@ https://material-ui.com
 
 ### Middlewares
 
-Redux Saga - https://www.npmjs.com/package/redux-logger
-Redux Logger - https://www.npmjs.com/package/redux-persist
-Redux Persist - https://www.npmjs.com/package/redux-saga
+- Redux Saga - https://www.npmjs.com/package/redux-logger
+- Redux Logger - https://www.npmjs.com/package/redux-persist
+- Redux Persist - https://www.npmjs.com/package/redux-saga
 
 ## How to run
 
